@@ -52,10 +52,10 @@ To transform and visualize the data, we employed the pyplot API layer in in Matp
 ### Files
 | File Path                             | Description                                                             |
 | ------------------------------------- | ----------------------------------------------------------------------- |
-| /ScientificVisualizations/quiver-plot/data/*                   | Data files used in the experiments, in raw ASCII and .tsv formats       |
-| /ScientificVisualizations/quiver-plot/images/{strategy}/\*.png | Single plot image for each date using {strategy = 'quiver', 'quiver_c'} |
-| /ScientificVisualizations/quiver-plot/quiver-plot.ipynb             | Source code used to process and visualize vector field data   |
-| /ScientificVisualizations/quiver-plot/images/{strategy}/\*.gif | Single plot image for each date using {strategy = 'quiver', 'quiver_c'} |
+| /ScientificVisualizations/QuiverPloting/data/*                   | Data files used in the experiments, in raw ASCII and .tsv formats       |
+| /ScientificVisualizations/QuiverPloting/plots/{strategy}/\*.jpg | Single plot image for each date using {strategy = 'quiver', 'quiver_c'} |
+| /ScientificVisualizations/QuiverPloting/quiver-plot.ipynb             | Source code used to process and visualize vector field data   |
+| /ScientificVisualizations/QuiverPlotting/plots/{strategy}/\*.gif | Single plot image for each date using {strategy = 'quiver', 'quiver_c'} |
 
 ### Dataset
 We picked 10 days between December 2011 - January 2012 uniformly from the [OSCAT wind dataset](https://las.incois.gov.in/). We picked this date so that we can visualize the cyclone [Thane](https://en.wikipedia.org/wiki/Cyclone_Thane) in the Bay of Bengal which hit South India between December 25 and December 31, 2011.
@@ -80,9 +80,9 @@ To transform and visualize the data, we employed the Basemap library in Matplotl
 ### Files
 | File Path                                         | Description                                               |
 | ------------------------------------------------- | --------------------------------------------------------- |
-| /InformationVisualizations/node-link/data/*        | The "David Copperfield" dataset downloaded from konect.cc |
-| /InformationVisualizations/node-link/images/\*.png | Screenshots of diagrams generated in gephi                |
-| /InformationVisualizations/node-link/categorize-words.py  | Python program used to categorize the words between nouns and adjectives                                                          |
+| /InformationVisualizations/NodeLink/data/*        | The "David Copperfield" dataset downloaded from konect.cc |
+| /InformationVisualizations/NodeLink/images/\*.png | Screenshots of diagrams generated in gephi                |
+| /InformationVisualizations/NodeLink/categorize-words.py  | Python program used to categorize the words between nouns and adjectives                                                          |
 ### Dataset
 We visualized the "David Copperfield" network from konect.cc. The network consisted of common noun and adjective adjacencies present in the novel "David Copperfield" by Charles Dickens. Each node of the graph corresponds to a word (a noun or adjective) and an edge between two nodes represents the two words occur together. The graph is unweighted and undirected. There are 112 nodes and 425 edges connecting them. Of the 112 words, 59 are nouns and 53 are adjectives.
 
