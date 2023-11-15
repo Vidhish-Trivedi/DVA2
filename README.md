@@ -85,7 +85,8 @@ To transform and visualize the data, we employed the Basemap library in Matplotl
 | -- | -- |
 | /ScientificVisualizations/ContourMapping/water_vapor_data/\*.nc | Dataset in the netCDF4 format for May 2013, June 2013 and July 2013, sourced from the AMSR2 dataset |
 | /ScientificVisualizations/ContourMapping/generated_images/water_vapor_*/\*.png | Single plot image for each date but different methods (Contour Fill in 'water_vapor' and 'water_vapor_fill_viridis', Marching squares in others)  |
-| /ScientificVisualizations/ColorMapping/make.ipynb | Source code used to process and visualize scalar field data |
+| /ScientificVisualizations/ContourMapping/make.ipynb | Source code used to process and visualize scalar field data |
+| /ScientificVisualizations/ContourMapping/generated_gifs/*gifs | Generated gifs for different methods (Contour Fill in 'water_vapor', Marching Squares in others) |
 
 ### Dataset
 We use the AMSR2 Ocean Dataset to visualize water vapor. The dataset consists of the daily data, sampled in a 3-day wise methodology for a period of 10 years. We choose a contiguous period of three months starting from May, 2013 till July, 2013. Three dates are sampled from this period, each being a month apart from others. The team decided on this period, as it covers a significant portion of monsoon for the Indian subcontinent. The choice of year was made arbitrarily.
