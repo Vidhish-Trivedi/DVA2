@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <style>h2{margin-top: 20px;margin-bottom: 10px;}</style>
+</head>
+<body style="background-color: #4F4A45;">
+    <div class="mt-4 p-5 bg-dark text-white rounded" style="margin-left: 20px;margin-right: 20px;">
+        <h1>Parallel Coordinates Plot</h1>
+        <h2>Features:</h2>
+        <ul>
+            <li>Brushing: The user can select specific regions on each axis and emphasize only the lines which pass through all of them.</li>
+            <li>Axis Rearrangement: The user can rearrange different axes on the parallel coordinates plot.</li>
+        </ul>
+    </div>
+    <div class="mt-4 p-5 bg-dark text-white rounded" style="text-align: center; margin-left: 20px;margin-right: 20px;">
+        <h2>Parallel Coordinates Plot - A</h2>
+        <p>Different years (2017, 2019, 2020, 2021, 2022)</p>
+        <div id='myDiv1'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+        <h2 style="margin-top: 50px;">Mapping For Colors</h2>
+        <table id="myTable1" class="table table-striped table-dark" style="margin-top: 50px;">
+            <thead>
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Color Value</th>
+              </tr>
+            </thead>
+        </table>
+    </div>
+    
+    <div class="mt-4 p-5 bg-dark text-white rounded" style="text-align: center; margin-left: 20px;margin-right: 20px;">
+        <h2>Parallel Coordinates Plot - B</h2>
+        <p>Different Countries, aggregated over 2017, 2019 to 2022</p>
+        <div id='myDiv2'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+        <h2 style="margin-top: 50px;">Mapping For Country Codes and Colors</h2>
+        <table id="myTable2" class="table table-striped table-dark" style="margin-top: 50px;">
+            <thead>
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Country Code</th>
+                <th scope="col">Color Value</th>
+              </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="mt-4 p-5 bg-dark text-white rounded" style="margin-left: 20px;margin-right: 20px;">
+        <div  style="text-align: center;">
+            <h2>Scalar Field Visualization</h2>
+        </div>
+        <p>
+            We have generated a scalar field visualization using color mapping to represent the surface rain rate during the period May 2013 - July 2013, with the data being sampled at an interval of roughly 9 days. The measured values are scaled using the global minimum and global maximum values of data across samples, and then mapped to a color map, such as viridis.
+            <br>
+            Since the maximum and minimum values are comparable across time steps, and we want to compare and identify trends over them, we have chosen to use global minimum and gloabal maximum.
+            <br>
+            Each data point is a triplet of the form (latitude, longitude, measured value), and the latitudes and longitudes are spaced out uniformly.
+        </p>
+        <h1>Experimentation With Different Types of Color Maps</h1>
+        <div  style="text-align: center;">
+            <h2>Viridis Colormap - Sequential</h2>
+            <img src="./gifs/sequential_viridis.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <div  style="text-align: center;">
+            <h2>Magma Colormap - Sequential</h2>
+            <img src="./gifs/sequential_magma.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <div  style="text-align: center;">
+            <h2>Hot Colormap - Sequential</h2>
+            <img src="./gifs/sequential_hot.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <div  style="text-align: center;">
+            <h2>BWR Colormap - Divergent</h2>
+            <img src="./gifs/diverging_bwr.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <div  style="text-align: center;">
+            <h2>PiYG Colormap - Divergent</h2>
+            <img src="./gifs/divergent_piyg.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <div  style="text-align: center;">
+            <h2>PRGn Colormap - Divergent</h2>
+            <img src="./gifs/divergent_prgn.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+        </div>
+        <h1 style="margin-top: 10px;">Decisions</h1>
+        <ul>
+            <li>Based on the above visualizations, we can see that viridis, hot, and magma are the most clear color maps. Out of these three, hot and magma color maps introduce artefacts as both the Bad Values (mapped to NULL) in the dataset and high scalar values (near 25) tend to have white color assigned to them.</li>
+            <li>Thus, we decide to proceed with the viridis color map and experiment with continuous, discrete, and logarithmic color scales.</li>
+        </ul>
+
+        <h1 style="margin-top: 10px;">Experimenting With Different Color Scales</h1>
+        <div  style="text-align: center;">
+            <h2>Viridis Colormap - Continuous</h2>
+            <img src="./gifs/viridis_continuous.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+            <p>Add text</p>
+        </div>
+        <div  style="text-align: center;">
+            <h2>Viridis Colormap - Discrete</h2>
+            <img src="./gifs/viridis_discrete.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+            <p>Add text</p>
+        </div>
+        <div  style="text-align: center;">
+            <h2>Viridis Colormap - Logarithmic</h2>
+            <img src="./gifs/viridis_log.gif" alt="GIF for scalar field visualization" style="width: 1200px;">
+            <p>Add text</p>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

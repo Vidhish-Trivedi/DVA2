@@ -1,0 +1,10 @@
+﻿Country,colorVal,Number of reported incidents,Number of health workers killed,Number of health workers kidnapped,Number of health workers arrested,Number of health workers injured,Total number of attacks on facilities which reported destruction,Total number of attacks on facilities which reported damage,Forceful entry into health facility,Occupation of health facility
+Afghanistan,0,107,39,8,1,32,1,23,0,1
+Burkina Faso,-500,46,10,36,2,11,1,6,5,0
+CAR,-1000,107,4,1,25,16,,2,6,9
+DRC,-1500,127,5,28,34,26,6,4,15,0
+Ethiopia,-2000,55,8,6,3,5,7,33,32,3
+Myanmar,-2500,411,29,4,559,36,5,24,117,65
+Nigeria,-3000,49,6,30,2,5,9,2,5,0
+OPT,-3500,152,5,0,13,58,3,28,1,2
+South Sudan,-4000,29,12,2,5,12,1,2,1,0
