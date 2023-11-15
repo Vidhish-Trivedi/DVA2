@@ -1,14 +1,19 @@
+# Rainbow Colormap Haters - CS732 - A2
+- Images in the `/images` folder correspond to the figure numbers in the report.
+- GIFs in the `/gifs` folder correspond to the generated GIF files.
+
+- Note that the `Files` subheading indicates only the important files in the repository.
+
 # Scientific Visualization
 
 ## Color Mapping
 ### Files
 | File Path | Description |
 | -- | -- |
-| /ScientificVisualizations/color-map/data/\*.nc | Dataset in the netCDF4 format for a particular date in 2013, sourced from the AMSR2 dataset |
-| /ScientificVisualizations/color-map/images/{strategy}/\*.png | Single plot image for each date using {strategy = 'discrete', 'continuous', 'log'}, corresponding to /color-map/data/\*.nc |
-| /ScientificVisualizations/color-map/Notebook.ipynb | Source code used to process and visualize scalar field data |
+| /ScientificVisualizations/ColorMapping/data/\*.nc | Dataset in the netCDF4 format for a particular date in 2013, sourced from the AMSR2 dataset |
+| /ScientificVisualizations/ColorMapping/images/{strategy}/\*.png | Single plot image for each date using {strategy = 'discrete', 'continuous', 'log'}, corresponding to /ScientificVisualizations/ColorMapping/data/\*.nc |
+| /ScientificVisualizations/ColorMapping/Notebook.ipynb | Source code used to process and visualize scalar field data |
 
-! TODO: ADD GIF FILE INFO
 ### Dataset
 We use the AMSR2 Ocean Dataset to visualize surface rain rate. The dataset consists of the daily data, sampled in a 3-day wise methodology for a period of 10 years. We choose a contiguous period of three months starting from May, 2013 till July, 2013. Ten dates are sampled from this period, each being 8 to 10 days apart from others. The team decided on this period, as it covers a significant portion of monsoon for the Indian subcontinent. The choice of year was made arbitrarily.
 ### Data Processing
@@ -73,6 +78,7 @@ pip install basemap
 
 ### Implementation
 To transform and visualize the data, we employed the Basemap library in Matplotlib. Our implementation includes two variations: one with vector lengths varying based on magnitude and another where vector lengths are uniform, and magnitude is represented using color as a channel.
+
 # Information Visualization
 
 ## Node-Link Diagrams
@@ -91,15 +97,23 @@ We visualized the "David Copperfield" network from konect.cc. The network consis
 Gephi can be downloaded and installed from their official [website](https://gephi.org/).
 ### Implementation
 We used gephi for visualizing the graphs using different layouts. We used a Part-Of-Speech tagger from the NLTK library in python to tag each word as either a noun or adjective to improve our analysis (please refer categorize_words.py).
+
 ## Parallel Coordinates Plot
+
 ### Files
-| File Path | Description |
-| -- | -- |
-| /color-map/data/\*.nc | Dataset in the netCDF4 format for a particular date in 2013, sourced from the AMSR2 dataset |
+| File Path                                         | Description                                               |
+| ------------------------------------------------- | --------------------------------------------------------- |
+| /InformationVisualizations/ParallelCoordinatesPlot/*.csv        | Processed data from the SHCC dataset |
+| /InformationVisualizations/ParallelCoordinatesPlot/index.html  | Finished results on an HTML page |
+| /InformationVisualizations/ParallelCoordinatesPlot/index1.html  | Experiments to improve the PCP implementation                                                          |
+| /InformationVisualizations/ParallelCoordinatesPlot/app.js  | JavaScript source code for parallel coordinates plot                                                          |
+| /InformationVisualizations/ParallelCoordinatesPlot/processing.ipynb  | Notebook for data processing using Python                                                          |
+
 ### Dataset
-The dataset used is ”Attacks on Health Care in Countries in Conflict (SHCC) Data” [12]. It provides various statistics pertaining to attacks on healthcare-related infrastructure across the world.
+The dataset used is ”Attacks on Health Care in Countries in Conflict (SHCC) Data”. It provides various statistics pertaining to attacks on healthcare-related infrastructure across the world.
+
 ### Data Processing
-The data was first cleaned and processed using Pandas [13] by Sai Madhavan G for CS732 - A1. The resultant file had aggregated values for the number of incidents and the number of heath workers killed, kidnapped, injured, and arrested. Each data row in this file can be uniquely identified using (year, country) as the primary key. In other words, the data is aggregated in a country-wise manner, for all years (2017 - 2022). When sparse data is further excluded from the chosen subset of data using Tableau Prep [14], we are left with data for the years {2017, 2019, 2020, 2021, 2022}. 
+The data was first cleaned and processed using Pandas by Sai Madhavan G for CS732 - A1. The resultant file had aggregated values for the number of incidents and the number of heath workers killed, kidnapped, injured, and arrested. Each data row in this file can be uniquely identified using (year, country) as the primary key. In other words, the data is aggregated in a country-wise manner, for all years (2017 - 2022). When sparse data is further excluded from the chosen subset of data using Tableau Prep, we are left with data for the years {2017, 2019, 2020, 2021, 2022}. 
 
 **Finally, we group the data using two strategies:** 
 - Country-wise grouping with aggregation across years.
