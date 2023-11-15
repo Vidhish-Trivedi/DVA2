@@ -1,0 +1,45 @@
+,Country,Total SHCC Incidents 2020,Total health worker killed,Total health worker kidnapped,Total health worker arrested ,Total health worker injured,Total health worker assaulted,Total health worker threatened/intimidated ,Total health worker sexual violence,Total number of attacks on facilities which reported destruction,Total number of attacks on facilities which reported damage,Health transportation destroyed,Health transportation damaged,Health transportation stolen/highjacked
+0,#country +name,#event +num ,#affected +healthworker +killed,#affected +healthworker +kidnapped,#affected +healthworker +arrested,#affected +healthworker +injured,#affected +healthworker +assaulted,#affected +healthworker +threatened,#affected +healthworker +SGBV,#indicator +health_facility +destroyed +num,#indicator +health_facility +damaged +num,#indicator +health_transport +destroyed +num,#indicator +health_transport +damaged +num,#indicator +health_transport +abducted +num
+1,Afghanistan,106,19,12,19,3,1,103,,,5,,1,1
+2,Azerbaijan,13,2,,,5,,,,,9,1,2,
+3,Bangladesh,1,1,,,,,,,,,,,
+4,Brazil,2,,,,1,,,,,,,,
+5,Burkina Faso,17,25,3,,3,1,2,,,3,,,2
+6,Burundi,2,,,4,,1,,,,,,,
+7,Cameroon,17,,8,14,,,1,,3,1,,,
+8,CAR,8,1,7,,,,,,,,,,
+9,Colombia,8,6,2,,,1,,,,,,1,
+10,DRC,81,24,17,,27,5,19,2,5,17,,1,
+11,Egypt,2,,,,,,,,,,,2,
+12,El Salvador,1,1,,,,,,,,,,,
+13,Equatorial Guinea,1,1,,,,,,,,,,,
+14,Ethiopia,6,,,,1,,,,,,,3,
+15,Greece,2,,,,,,,,,,,,
+16,Haiti,4,,3,,,,,,1,,,,
+17,India,2,,1,,,1,,,,,,,
+18,Indonesia,1,1,,,1,,,,,,,,
+19,Iran,2,,,,,,,,,2,,,
+20,Iraq,5,2,2,,,,,,,,,,
+21,Kenya,3,,,,2,,,,,,1,1,
+22,Lebanon,1,,,,,1,,,,,,,
+23,Libya,77,15,4,,23,6,2,,5,19,4,8,6
+24,Madagascar,3,2,,,,2,,,,,,,
+25,Mali,11,,1,,,1,2,,1,,,4,1
+26,Mexico,16,7,13,,,2,2,,,,,,
+27,Mozambique,14,1,,,3,,1,1,10,3,,1,
+28,Myanmar,17,1,2,,1,,4,,8,1,,1,
+29,Niger,8,1,2,,,,,,,,,2,4
+30,Nigeria,43,8,18,,8,1,,,1,7,1,,1
+31,OPT,61,1,,4,28,,10,,2,3,,3,
+32,Pakistan,7,3,5,,3,,,,,,,,
+33,Philippines,7,2,1,,1,1,1,,,,,,
+34,Somalia,10,6,11,,1,,1,,,,,,
+35,South Sudan,18,19,1,3,8,,,,1,1,,1,
+36,Sudan,11,,,,3,1,1,,,1,,,1
+37,Syria,121,20,2,15,36,6,1,,3,35,2,9,
+38,Turkey,1,,,,,,,,,1,,,
+39,Uganda,1,1,,,,,,,,,,,
+40,Ukraine,2,2,,,2,,,,,,,,
+41,USA,10,,,4,7,,,,,,,,
+42,Venezuela,2,,,1,2,,,,,,,,
+43,Yemen,81,13,2,1,6,7,2,,7,20,1,1,10

@@ -79,6 +79,33 @@ pip install basemap
 ### Implementation
 To transform and visualize the data, we employed the Basemap library in Matplotlib. Our implementation includes two variations: one with vector lengths varying based on magnitude and another where vector lengths are uniform, and magnitude is represented using color as a channel.
 
+## Contour Mapping
+### Files
+| File Path | Description |
+| -- | -- |
+| /ScientificVisualizations/ContourMapping/water_vapor_data/\*.nc | Dataset in the netCDF4 format for May 2013, June 2013 and July 2013, sourced from the AMSR2 dataset |
+| /ScientificVisualizations/ContourMapping/generated_images/water_vapor_*/\*.png | Single plot image for each date but different methods (Contour Fill in 'water_vapor' and 'water_vapor_fill_viridis', Marching squares in others)  |
+| /ScientificVisualizations/ContourMapping/make.ipynb | Source code used to process and visualize scalar field data |
+| /ScientificVisualizations/ContourMapping/generated_gifs/*gifs | Generated gifs for different methods (Contour Fill in 'water_vapor', Marching Squares in others) |
+
+### Dataset
+We use the AMSR2 Ocean Dataset to visualize water vapor. The dataset consists of the daily data, sampled in a 3-day wise methodology for a period of 10 years. We choose a contiguous period of three months starting from May, 2013 till July, 2013. Three dates are sampled from this period, each being a month apart from others. The team decided on this period, as it covers a significant portion of monsoon for the Indian subcontinent. The choice of year was made arbitrarily.
+### Data Processing
+The data for specific dates was downloaded in the netCDF format, and was processed using the netCDF4 library in python. The water vapor variable was extracted, giving us the scalar values corresponding to 1440 longitudes and 720 latitudes.
+### Requirements
+- Python 3.10 +
+- Installing the dependencies.
+
+```sh
+pip install netCDF
+pip install numpy
+pip install pandas
+pip install matplotlib
+pip install xarray
+pip install cartopy
+pip install imageio
+```
+
 # Information Visualization
 
 ## Node-Link Diagrams
@@ -132,6 +159,51 @@ pip install pandas
 
 #### For D3.js and Plotly.js (PCP)
 - All dependencies related to D3.js and Plotly.js, as well as Bootstrap, should work without any additional setup. These libraries are included using their CDNs as script tags in the HTML page. 
+
+- If you wish to run a live server and view the results on an HTML page, you can do so in an easy way by installing the following vsCode extension.
+
+
+Name: Live Server
+Id: ritwickdey.LiveServer
+Description: Launch a development local Server with live reload feature for static & dynamic pages
+Version: 5.7.9
+Publisher: Ritwick Dey
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+### Implementation
+The project's codebase is predominantly in JavaScript but incorporates Python for some data processing tasks. The results are presented on an HTML page accessible via a VSCode live server. The visualization utilizes D3.js to read CSV data, then utilizes Plotly.js Parcoords API to generate a Parallel Coordinates Plot (PCP). This occurs twice: first, grouping data by year with aggregation across countries, and second, by country with aggregation across years. The API allows customization of color scales, utilizing the Jet colormap, where each data index (year or country) corresponds to a distinct color. A new column, colorVal, was introduced during preprocessing to map these colors linearly. These colors serve to differentiate data indices, though they don't represent quantitative values. For categorical data like countries, numerical country codes are assigned. Additionally, the API enables adding annotations and labels to the final plot using the layout parameter.
+### Running The Live Server
+- **Install Visual Studio Code:** If you haven't already, download and install Visual Studio Code from the official website: [Visual Studio Code](https://code.visualstudio.com/).
+- **Open Visual Studio Code:** Launch VS Code by clicking on its icon.
+- **Install Live Server Extension:** Go to the Extensions view by clicking on the square icon on the left sidebar or by pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac). Search for "Live Server" in the Extensions Marketplace, select it, and click "Install".
+- **Open a Project Folder:** Open the folder containing your HTML, CSS, or JavaScript files by selecting `File > Open Folder...` in the menu.
+- **Start the Live Server:** Once you have your HTML file open in the editor, right-click anywhere within the HTML file or use the shortcut `Alt+L Alt+O` (Windows/Linux) or `Option+L Option+O` (Mac). From the context menu, choose "Open with Live Server". Alter
+- **Access the Live Server:** This action will automatically launch a web browser window displaying your HTML file using a local server. Any changes you make to the HTML, CSS, or JavaScript files will be instantly reflected in the browser without needing to manually refresh the page.
+- **Stop the Live Server:** To stop the live server, you can either close the browser tab or right-click on the HTML file again and select "Stop Live Server".
+- **Settings and Configuration:** You can configure certain settings for Live Server by going to `File > Preferences > Settings` or using the shortcut `Ctrl+,` (Windows/Linux) or `Cmd+,` (Mac). Search for "Live Server" in the settings search bar to find and adjust settings like port number, default browser, etc.
+
+
+## TreeMap
+
+### Files
+| File Path                                         | Description                                               |
+| ------------------------------------------------- | --------------------------------------------------------- |
+| /InformationVisualizations/Treemap/test_data/*.csv        | Processed data from the SHCC dataset |
+| /InformationVisualizations/Treemap/trial.html  | Finished results on an HTML page |                                   |
+| /InformationVisualizations/Treemap/val.js  | JavaScript source code for Treemap                                                          |
+| /InformationVisualizations/Treemap/val.css  | Stylesheet for trial.html                                                          |
+| /InformationVisualizations/Treemap/images | Image snips used for the report. |
+
+### Dataset
+The dataset used is ”Attacks on Health Care in Countries in Conflict (SHCC) Data”. It provides various statistics pertaining to attacks on healthcare-related infrastructure across the world.
+
+### Data Processing
+The data was cleaned and preprocessed. Initially, the incidents data for the year 2022 was available with individual dates and country information, which was then aggregated. Additionally, for a specific plot, a subset(columns) of the original 2022 incidents data was extracted, and subsequent plots were generated based on this subset. 
+
+### Requirements
+
+#### For AnyChart.js and FusionCharts.js (PCP)
+- All dependencies related to AnyChart.js and FusionCharts.js, should work without any additional setup. These libraries are included using their CDNs as script tags in the HTML page. 
 
 - If you wish to run a live server and view the results on an HTML page, you can do so in an easy way by installing the following vsCode extension.
 
