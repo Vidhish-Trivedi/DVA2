@@ -191,6 +191,7 @@ The project's codebase is predominantly in JavaScript but incorporates Python fo
 | /InformationVisualizations/Treemap/trial.html  | Finished results on an HTML page |                                   |
 | /InformationVisualizations/Treemap/val.js  | JavaScript source code for Treemap                                                          |
 | /InformationVisualizations/Treemap/val.css  | Stylesheet for trial.html                                                          |
+| /InformationVisualizations/Treemap/images | Image snips used for the report. |
 
 ### Dataset
 The dataset used is ”Attacks on Health Care in Countries in Conflict (SHCC) Data”. It provides various statistics pertaining to attacks on healthcare-related infrastructure across the world.
